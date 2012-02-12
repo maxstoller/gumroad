@@ -15,9 +15,9 @@ module Gumroad
     end
     
     def create(options={})
-      scoped_options = {}
-      options.each { |k, v| scoped_options["link[#{k.to_s}]"] = v }
-      json = @session.post('/links', scoped_options)
+      params = {}
+      options.each { |k, v| params["link[#{k.to_s}]"] = v }
+      json = @session.post('/links', params)
       Gumroad::Link.new(@session, json['link'])
     end
   end
