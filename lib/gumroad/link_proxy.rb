@@ -15,11 +15,10 @@ module Gumroad
     end
     
     def create(options={})
-      if json = @session.post('/links', options)
-        Gumroad::Link.new(@session, json['link'])
-      else
-        nil
-      end
+      scoped_options = {}
+      options.each { |k, v| scoped_options["link[#{k.to_s}]"] = v }
+      json = @session.post('/links', scoped_options)
+      Gumroad::Link.new(@session, json['link'])
     end
   end
 end

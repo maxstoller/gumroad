@@ -5,20 +5,19 @@ module Gumroad
     include HTTParty
     base_uri 'https://gumroad.com/api/v1'
 
-    attr_reader :token
-
     def initialize(email, password)
-      @token = post('/sessions', {query: {
+      token = post('/sessions', {
         email: email, password: password
-      }})['token']
+      })['token']
+      self.class.basic_auth token, ''
     end
 
     def post(path, params)
-      self.class.post(path, params)
+      self.class.post(path, query: params)
     end
 
     def get(path)
-      self.class.get(path, basic_auth: {username: @token, password: ''})
+      self.class.get(path)
     end
 
     def links
