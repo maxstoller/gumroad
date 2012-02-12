@@ -7,18 +7,26 @@ Gem::Specification.new do |s|
   s.version     = Gumroad::VERSION
   s.authors     = ["maxstoller"]
   s.email       = ["maxstoller@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/maxstoller/gumroad"
+  s.summary     = %q{Gumroad API wrapper}
+  s.description = %q{A Ruby wrapper for the Gumroad API.}
 
   s.rubyforge_project = "gumroad"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = [
+    "Gemfile",
+    "gumroad.gemspec",
+    "Rakefile",
+    "lib/gumroad.rb",
+    "lib/gumroad/session.rb",
+    "lib/gumroad/link.rb",
+    "lib/gumroad/link_proxy.rb",
+    "lib/gumroad/version.rb"
+  ]
+  
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "httparty"
 end
