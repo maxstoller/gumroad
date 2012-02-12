@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "gumroad"
 
   s.files         = [
+    "README.markdown",
+    "LICENSE",
     "Gemfile",
     "gumroad.gemspec",
     "Rakefile",
