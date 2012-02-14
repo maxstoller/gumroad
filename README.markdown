@@ -29,6 +29,13 @@ link = client.links.find(id)
 
 You now have a Gumroad::Link object. You can call methods such as `link.name` and `link.url`.
 
+You can then modify the link's attributes and call save to update it.
+
+``` ruby
+link.price = '100'
+link.save
+```
+
 It's pretty easy to create a link.
 
 ``` ruby
