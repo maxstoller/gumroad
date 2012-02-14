@@ -12,12 +12,20 @@ module Gumroad
       self.class.basic_auth token, ''
     end
 
+    def destroy
+      delete('/sessions')
+    end
+
     def post(path, params)
       self.class.post(path, query: params)
     end
 
     def get(path)
       self.class.get(path)
+    end
+
+    def delete(path)
+      self.class.delete(path)
     end
 
     def links

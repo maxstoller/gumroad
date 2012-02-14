@@ -15,5 +15,9 @@ module Gumroad
       json = @session.post("/links", params)['link']
       self
     end
+
+    def destroy
+      @session.delete("/links/#{id}")
+    end
   end
 end
