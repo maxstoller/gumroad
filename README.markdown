@@ -26,7 +26,7 @@ You now have a Gumroad::Link object. You can call methods such as `link.name` an
 It's pretty easy to create a link.
 
 ``` ruby
-client.links.create(name: 'Github', url: 'http://github.com')
+client.links.create(name: '@maxstoller', url: 'http://twitter.com/maxstoller', description: 'A link to @maxstoller.', price: '100')
 ```
 
 Thanks
