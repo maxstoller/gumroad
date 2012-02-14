@@ -9,5 +9,11 @@ module Gumroad
         instance_variable_set(:"@#{attribute}", json[attribute.to_s])
       end
     end
+
+    def save
+      params = {name: name, url: url, description: description, price: price}
+      json = @session.post("/links", params)['link']
+      self
+    end
   end
 end
