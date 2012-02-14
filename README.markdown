@@ -12,6 +12,7 @@ client = Gumroad.new(username, password)
 ```
 
 If you feel the need to, you can revoke the session.
+
 ``` ruby
 client.destroy
 ```
