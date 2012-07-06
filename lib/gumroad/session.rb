@@ -17,7 +17,7 @@ module Gumroad
     end
 
     def post(path, params)
-      self.class.post(path, query: params)
+      self.class.post(path, body: params)
     end
 
     def get(path)
