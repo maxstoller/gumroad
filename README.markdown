@@ -3,8 +3,6 @@ Gumroad
 
 Gumroad is a Ruby wrapper for the Gumroad API.
 
-**This gem is a work in progress. Contributions are welcome.**
-
 Authentication
 --------
 ``` ruby
@@ -42,6 +40,6 @@ It's pretty easy to create a link.
 client.links.create(name: '@maxstoller', url: 'http://twitter.com/maxstoller', description: 'A link to @maxstoller.', price: '100')
 ```
 
-Thanks
+Contributing
 --------
-* GroupMe's [quimby](https://github.com/groupme/quimby) gem. I took their object approach when writing this gem.
+Pull requests are welcomed.
